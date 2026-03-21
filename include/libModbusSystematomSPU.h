@@ -24,6 +24,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <cstdlib>
 #include <cstdint>
 #include <chrono>
+#include <vector>
 
 struct SPU_DATA
 {
@@ -54,6 +55,38 @@ struct SPU_DATA
     int     XXXX            = -1;
 };
 
+// Matriz Nx2: 
+// Coluna 0 (Índice 0) = Header
+// Coluna 1 (Índice 1) = Tipo
+std::vector<std::vector<std::string>> SPU_DATA_MATRIX = {
+    {"SPU_%s_STATE",           "%d"},
+    {"SPU_%s_TIME_Y",          "%d"},
+    {"SPU_%s_TIME_Mo",         "%d"},
+    {"SPU_%s_TIME_D",          "%d"},
+    {"SPU_%s_TIME_H",          "%d"},
+    {"SPU_%s_TIME_Mi",         "%d"},
+    {"SPU_%s_TIME_S",          "%d"},
+    {"SPU_%s_TIME_MS",         "%d"},
+    {"SPU_%s_N_DATA_FP",       "%f"},
+    {"SPU_%s_T_DATA_FP",       "%f"},
+    {"SPU_%s_F1_DATA_FP",      "%f"},
+    {"SPU_%s_F2_DATA_FP",      "%f"},
+    {"SPU_%s_F3_DATA_FP",      "%f"},
+    {"SPU_%s_EMR_N_THRESHOLD", "%f"},
+    {"SPU_%s_WRN_N_THRESHOLD", "%f"},
+    {"SPU_%s_EMR_T_THRESHOLD", "%f"},
+    {"SPU_%s_WRN_T_THRESHOLD", "%f"},
+    {"SPU_%s_EMR_N",           "%d"},
+    {"SPU_%s_WRN_N",           "%d"},
+    {"SPU_%s_EMR_T",           "%d"},
+    {"SPU_%s_WRN_T",           "%d"},
+    {"SPU_%s_R1",              "%d"},
+    {"SPU_%s_R2",              "%d"},
+    {"SPU_%s_R3",              "%d"},
+    {"SPU_%s_RDY",             "%d"},
+    {"SPU_%s_TEST",            "%d"},
+    {"SPU_%s_XXXX",            "%d"}
+};
 
 void libModbusSystematomSPU_license();
 
